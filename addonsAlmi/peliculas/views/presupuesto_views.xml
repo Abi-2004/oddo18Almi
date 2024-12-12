@@ -2,7 +2,7 @@
 
 <odoo>
     <record id="view_presupuesto_form" model="ir.ui.view">
-        <field name="name">Vista formulario de presupuesto</field>
+        <field name="name" >Vista formulario de presupuesto</field>
         <field name="model">presupuesto</field>
         <field name="arch" type="xml">
             <form>
@@ -11,11 +11,13 @@
                     <button string="Cancelar" type="object" name="cancelar_presupuesto" class="oe_highlight" invisible="not (state == 'borrador' or state == 'aprobado')"/>
                     <field name="state" widget="statusbar" statusbar_visible="borrador, aprobado"/>
                 </header>
+                <div class="alert alert-info" role="alert" style="margin-bottom:0" invisible="not dsc_clasificacion">
+                    <field name="dsc_clasificacion" readonly="1" force_save="1"/>
+                </div>
                 <sheet>
-                    <!--h1 style="color:red">Presupuesto</h1-->
-                    <widget name="web_ribbon" title="Archivado" bg_color="bg-danger"
-                          invisible="not active" />
-                    <field name="image_1920" widget="image" class="oe_avatar" options="
+                    <!--<h1 style="color:red;text-align:center"> Presupuesto </h1>-->
+                  <widget name="web_ribbon" title="Archivado" bg_color="bg-danger" invisible="not active" />
+                  <field name="image_1920" widget="image" class="oe_avatar" options="
                     {'preview_image':'image_128','size':[128,128]}
                     "/>
                     <!--voy a crear estilo para el nombre de la peli-->
@@ -24,21 +26,23 @@
                             <field name="active" invisible="1"/>
                             <h1 style="display:flex;">
                                 <field name="name" placeholder="Nombre de la pelicula" required="1" default_focus="1"/>
-                                <field name="puntuacion" widget="percentpie" string=" " style="padding-left:10px" class="oe_inline"/>
+                                <field name="puntuacion" widget="percentpie" string=" " style="padding-lef:10px" class="oe_inline"/>
                                 <field name="puntuacion2" placeholder="Puntuacion de usuario" class="oe_edit_only oe_inline"/>
+                                <field name="clasificacion"/>
                             </h1>
                         </div>
-                        <div class="o_row" style="display:flex;">
-                            <!--<field name="clasificacion" required="1"/>-->
-                            <spann class="fa fa-circle" invisible="not (clasificacion and fecha_estreno)" style="font-size:8px, padding:5px 5px"/>
-                            <field name="fecha_estreno"/>
+                        <div class="o_row" style="dispaly:flex;">
+                           <!-- <field name="clasificacion" required="1"/>-->
+                            <span class="fa fa-circle" invisible="not (clasificacion and fecha_estreno)" style="font-size:8px; padding:5px 5px;"/>
+                            <field name="fecha_estreno" />
+                            <field name="active"/>
                             <div class="o_row">
                                 <field name="generos_id" widget="many2many_tags" style="display:flex;"/>
                             </div>
                         </div>
                     </div>
 
-                    <group string="Datos generales" style="margin-top:-10px">
+                    <group string="Datos generales" style="margin-top:-10px;">
                         <field name="vista_general" placeholder="Vista general" />
                         <group>
                             <field name="director_id" domain="[('category_id', 'in', [categoria_director_id])]" options="{'no_create': True, 'no_open': True}"/>
@@ -68,4 +72,5 @@
             </form>
         </field>
     </record>
+
 </odoo>

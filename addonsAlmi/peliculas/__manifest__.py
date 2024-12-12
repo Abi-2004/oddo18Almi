@@ -3,7 +3,7 @@
 {
     'name': 'Modulo de Peliculas',
     'version': '1.0',
-    'depends' : ['base', 'contacts', 'mail'],
+    'depends' : ['base','contacts','mail'],
     'author' : 'Almi',
     'category': 'Peliculas',
     'website': '',
