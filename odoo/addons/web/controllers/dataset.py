@@ -20,6 +20,8 @@ class DataSet(http.Controller):
         params = request.get_json_data()['params']
         try:
             model_class = request.registry[params['model']]
+            if params['model'] == 'presupuesto' and model_class is None:
+                raise KeyError('presupuesto')
         except KeyError as e:
             raise NotFound() from e
         method_name = params['method']
