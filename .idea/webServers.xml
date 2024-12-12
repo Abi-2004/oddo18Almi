@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="5078f10b-0eae-463d-8457-70c8ed114c3a" name="abi">
+        <fileTransfer rootFolder="/home/ubuntu/odoo-one" accessType="SFTP" host="44.208.208.112" port="22" sshConfigId="29d1605c-1d6e-43e2-a608-11508e730369" sshConfig="ubuntu@44.208.208.112:22 key" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
