@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
 # Part of Odoo. Modulo de peliculas realizado en ALMI
 {
-    'name': 'RopaAlmi',
+    'name': 'Modulo de Ropas',
     'version': '1.0',
     'depends' : ['base','contacts','mail'],
     'author' : 'Almi',
-    'category': 'RopaAlmi',
+    'category': 'Ropas',
     'website': '',
-    'description': 'Modulo para  gestional Ropas',
+    'description': 'Modulo para gestionar ropas ',
+
 }
