@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<odoo>
+    <record id="secuencia_presupuesto_pelicula" model="ir.sequence">
+        <!-- Nombre de la secuencia -->
+        <field name="name">Secuencia para presupuesto de peliculas</field>
+        <!-- Ganatizamos que no hay espacios TRIM -->
+        <field name="implementation">no_gap</field>
+        <!-- Un string para identificar la secuencia (nombre)-->
+        <field name="code">secuencia.presupuesto.pelicula</field>
+        <!-- Prefijo de la secuencia -->
+        <field name="prefix">PP</field>
+        <!-- Ultimos datos el sufijo-->
+        <field name="suffix">-%(year)s</field>
+        <!-- Padding (style) -->
+        <field name="padding">3</field>
+        <!-- Incremento de la secuencia -->
+        <field name="number_increment">1</field>
+    </record>
+</odoo>
