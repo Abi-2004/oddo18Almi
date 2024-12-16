@@ -8,5 +8,4 @@
     'category': 'Ropas',
     'website': '',
     'description': 'Modulo para gestionar ropas ',
-
 }
