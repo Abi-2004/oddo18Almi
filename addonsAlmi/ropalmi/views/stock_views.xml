@@ -14,14 +14,30 @@
                         <field name="color"/>
                         <field name="precio"/>
                     </group>
-                    <field name="size_stock_ids">
+
+                    <!-- Aquí usamos <list> en lugar de <tree> -->
+                    <field name="size_stock_ids" widget="one2many_list">
                         <list>
                             <field name="size"/>
                             <field name="cantidad"/>
                         </list>
                     </field>
+
                 </sheet>
             </form>
+        </field>
+    </record>
+
+    <!-- Vista separada en caso de que quieras llamarla desde un menú o acción -->
+    <record id="view_stock_size_list" model="ir.ui.view">
+        <field name="name">stock.size_stock.list</field>
+        <field name="model">stock.size_stock</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="size"/>
+                <field name="cantidad"/>
+                <field name="item_id"/>
+            </list>
         </field>
     </record>
 </odoo>
