@@ -1,20 +1,19 @@
-<?xml version="1.0" encoding="utf-8" ?>
-
 <odoo>
-    <record id="action_open_presupuesto" model="ir.actions.act_window">
-        <field name="name">Presupuesto</field>
-        <field name="res_model">presupuesto</field>
-        <field name="view_mode">list,form,kanban</field>
+    <menuitem id="menu_principal" name="ROPALMI" sequence="1"/>
+
+    <record id="action_open_stock" model="ir.actions.act_window">
+        <field name="name">Stock</field>
+        <field name="res_model">stock.item</field>
+        <field name="view_mode">form,kanban,list</field>
     </record>
 
-    <record id="action_open_recurso_cinematografico" model="ir.actions.act_window">
-        <field name="name">Recurso Cinematografico</field>
-        <field name="res_model">recurso.cinematografico</field>
-        <field name="view_mode">list,form</field>
+    <menuitem id="menu_stock" name="Stock" parent="menu_principal" sequence="2" action="action_open_stock"/>
+
+    <record id="action_open_ventas" model="ir.actions.act_window">
+        <field name="name">Ventas</field>
+        <field name="res_model">venta</field>
+        <field name="view_mode">form,kanban,list</field>
     </record>
 
-    <menuitem id="menu_principal" name="Peliculas"/>
-    <menuitem id="menu_horizontal" name="Mis modelos" parent="menu_principal"/>
-    <menuitem id="menu_vertical_presupuesto" name="Presupuesto" parent="menu_horizontal" action="action_open_presupuesto"/>
-    <menuitem id="menu_vertical_recurso_cinematografico" name="Recurso cinematográfico" parent="menu_horizontal" action="action_open_recurso_cinematografico"/>
+    <menuitem id="menu_ventas" name="Ventas" parent="menu_principal" sequence="3" action="action_open_ventas"/>
 </odoo>

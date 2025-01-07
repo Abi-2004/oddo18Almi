@@ -1,0 +1,10 @@
+<odoo>
+    <record id="venta_report" model="ir.actions.report">
+        <field name="name">Reporte de Ventas</field>
+        <field name="model">venta</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">ropalmi.report_venta</field>
+        <field name="binding_model_id" ref="model_venta"/>
+        <field name="binding_type">report</field>
+    </record>
+</odoo>
