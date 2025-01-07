@@ -1,0 +1,48 @@
+<odoo>
+    <record id="view_stock_item_kanban" model="ir.ui.view">
+        <field name="name">stock.item.kanban</field>
+        <field name="model">stock.item</field>
+        <field name="arch" type="xml">
+            <kanban class="o_kanban_example">
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click"
+                             style="border:1px solid #ddd;
+                                    border-radius:8px;
+                                    padding:20px;
+                                    margin:10px;
+                                    background-color:#fefefe;
+                                    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);">
+
+                            <!-- Nombre del producto -->
+                            <div style="font-size:18px; margin-bottom:10px; color:#333;">
+                                <strong><field name="name"/></strong>
+                            </div>
+
+                            <!-- Marca -->
+                            <div style="margin-bottom:5px;">
+                                <span style="font-weight:bold; color:#555;">Marca: </span><field name="marca"/>
+                            </div>
+
+                            <!-- Color -->
+                            <div style="margin-bottom:5px;">
+                                <span style="font-weight:bold; color:#555;">Color: </span><field name="color"/>
+                            </div>
+
+                            <!-- Precio -->
+                            <div style="margin-bottom:5px;">
+                                <span style="font-weight:bold; color:#555;">Precio: </span><field name="precio"/>
+                            </div>
+
+                            <!-- Resumen de tallas y cantidades -->
+                            <div style="margin-top:10px; padding-top:10px; border-top:1px solid #eee;">
+                                <span style="font-weight:bold; color:#555;">Tallas y Cantidades: </span>
+                                <field name="size_summary"/>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+</odoo>

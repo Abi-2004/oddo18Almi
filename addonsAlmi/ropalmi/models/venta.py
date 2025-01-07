@@ -1,6 +1,5 @@
 from odoo import models, fields, api
 
-
 class Venta(models.Model):
     _name = 'venta'
     _description = 'Venta'
@@ -18,6 +17,10 @@ class Venta(models.Model):
     def _compute_total(self):
         for record in self:
             record.total = sum(line.subtotal for line in record.product_lines)
+
+    def action_generate_pdf(self):
+        return self.env.ref('ropalmi.report_venta_action').report_action(self)
+
 
 class VentaLine(models.Model):
     _name = 'venta.line'

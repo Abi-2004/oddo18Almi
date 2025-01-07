@@ -1,19 +1,24 @@
 <odoo>
     <menuitem id="menu_principal" name="ROPALMI" sequence="1"/>
 
-    <record id="action_open_stock" model="ir.actions.act_window">
-        <field name="name">Stock</field>
-        <field name="res_model">stock.item</field>
-        <field name="view_mode">form,kanban,list</field>
-    </record>
+<record id="action_open_stock" model="ir.actions.act_window">
+    <field name="name">Stock</field>
+    <field name="res_model">stock.item</field>
+    <field name="view_mode">kanban,form,list</field>
+    <field name="view_id" ref="view_stock_item_kanban"/>
+</record>
+
+
 
     <menuitem id="menu_stock" name="Stock" parent="menu_principal" sequence="2" action="action_open_stock"/>
 
-    <record id="action_open_ventas" model="ir.actions.act_window">
-        <field name="name">Ventas</field>
-        <field name="res_model">venta</field>
-        <field name="view_mode">form,kanban,list</field>
-    </record>
+<record id="action_open_ventas" model="ir.actions.act_window">
+    <field name="name">Ventas</field>
+    <field name="res_model">venta</field>
+    <field name="view_mode">kanban,form,list</field>
+    <field name="view_id" ref="ropalmi.view_venta_kanban"/>
+</record>
+
 
     <menuitem id="menu_ventas" name="Ventas" parent="menu_principal" sequence="3" action="action_open_ventas"/>
 </odoo>
