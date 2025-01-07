@@ -5,7 +5,7 @@
     <field name="name">Stock</field>
     <field name="res_model">stock.item</field>
     <field name="view_mode">kanban,form,list</field>
-    <field name="view_id" ref="view_stock_item_kanban"/>
+
 </record>
 
 
@@ -16,7 +16,7 @@
     <field name="name">Ventas</field>
     <field name="res_model">venta</field>
     <field name="view_mode">kanban,form,list</field>
-    <field name="view_id" ref="ropalmi.view_venta_kanban"/>
+
 </record>
 
 

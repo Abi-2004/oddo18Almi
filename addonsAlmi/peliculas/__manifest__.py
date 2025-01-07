@@ -8,14 +8,13 @@
     'category': 'Peliculas',
     'website': '',
     'description': 'Modulo para realizar presupuestos de peliculas',
-    'data':[
-        'security/security.xml',
-        'security/ir.model.access.csv',
-        'wizard/update_wizard_views.xml',
-        'report/reporte_pelicula.xml',
-        'data/categoria.xml',
-        'data/secuencia.xml',
+    'data': [
         'views/menu.xml',
-        'views/presupuesto_views.xml',
+        'views/stock_views.xml',
+        'views/venta_views.xml',
+        'views/stock_item_kanban_view.xml',
+        'views/venta_kanban_view.xml',
+        'reports/venta_report_templates.xml',
+        'reports/venta_report.xml'  # Esto es crucial
     ],
 }
