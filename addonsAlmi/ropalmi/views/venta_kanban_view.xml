@@ -36,16 +36,6 @@
                                 <span style="font-weight:bold; color:#555;">Método de Pago: </span>
                                 <field name="metodo_pago"/>
                             </div>
-
-                            <!-- Botón para generar PDF -->
-                            <div style="margin-top:15px;">
-                                <button type="object"
-                                        name="action_generate_pdf"
-                                        class="btn btn-primary"
-                                        style="width:100%;">
-                                    Generar PDF
-                                </button>
-                            </div>
                         </div>
                     </t>
                 </templates>
