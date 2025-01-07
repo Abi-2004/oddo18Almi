@@ -1,4 +1,5 @@
 from odoo import models, fields, api
+from odoo import report
 
 class Venta(models.Model):
     _name = 'venta'
@@ -19,6 +20,9 @@ class Venta(models.Model):
             record.total = sum(line.subtotal for line in record.product_lines)
 
     def action_generate_pdf(self):
+        return self.env.ref('ropalmi.report_venta_action').report_action(self)
+
+    def generate_pdf(self):
         return self.env.ref('ropalmi.report_venta_action').report_action(self)
 
 
