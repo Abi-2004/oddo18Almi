@@ -25,10 +25,22 @@
                                 <field name="fecha"/>
                             </div>
 
-                            <!-- Total -->
+                            <!-- Subtotal -->
                             <div style="margin-bottom:5px;">
-                                <span style="font-weight:bold; color:#555;">Total: </span>
-                                <field name="total"/>
+                                <span style="font-weight:bold; color:#555;">Subtotal: </span>
+                                <field name="total" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                            </div>
+
+                            <!-- IVA -->
+                            <div style="margin-bottom:5px;">
+                                <span style="font-weight:bold; color:#555;">IVA (21%): </span>
+                                <field name="iva" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                            </div>
+
+                            <!-- Total con IVA -->
+                            <div style="margin-bottom:5px;">
+                                <span style="font-weight:bold; color:#555;">Total con IVA: </span>
+                                <field name="venta_total" widget="monetary" options="{'currency_field': 'currency_id'}"/>
                             </div>
 
                             <!-- Método de Pago -->
@@ -37,15 +49,6 @@
                                 <field name="metodo_pago"/>
                             </div>
 
-                            <!-- Botón para generar PDF -->
-                            <div style="margin-top:15px;">
-                                <button type="object"
-                                        name="action_generate_pdf"
-                                        class="btn btn-primary"
-                                        style="width:100%;">
-                                    Generar PDF
-                                </button>
-                            </div>
                         </div>
                     </t>
                 </templates>

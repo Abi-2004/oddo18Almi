@@ -5,20 +5,30 @@
         <field name="arch" type="xml">
             <form>
                 <sheet>
-                    <group>
-                        <field name="name"/>
-                        <field name="fecha"/>
-                        <field name="metodo_pago"/>
+                    <!-- Información General de la Venta -->
+                    <group style="border: 1px solid #ddd; border-radius: 8px; padding: 15px; margin-bottom: 20px;">
+                        <field name="name" style="border: 1px solid #ccc; border-radius: 8px; padding: 5px; margin-bottom: 10px;"/>
+                        <field name="fecha" style="border: 1px solid #ccc; border-radius: 8px; padding: 5px; margin-bottom: 10px;"/>
+                        <field name="metodo_pago" style="border: 1px solid #ccc; border-radius: 8px; padding: 5px; margin-bottom: 10px;"/>
                     </group>
-                    <field name="product_lines">
-                        <list>
-                            <field name="product_id"/>
-                            <field name="cantidad"/>
-                            <field name="subtotal"/>
-                        </list>
-                    </field>
-                    <group>
-                        <field name="total"/>
+
+                    <!-- Líneas de Productos -->
+                    <group style="border: 1px solid #ddd; border-radius: 8px; padding: 15px; margin-bottom: 20px;">
+                        <field name="product_lines">
+                            <list style="border: 1px solid #ccc; border-radius: 8px; padding: 10px;">
+                                <field name="product_id" context="{'default_product_id': product_id}" style="border: 1px solid #ccc; border-radius: 8px; padding: 5px; margin-bottom: 10px;"/>
+                                <field name="talla_id" domain="[('stock_item_id', '=', product_id)]" style="border: 1px solid #ccc; border-radius: 8px; padding: 5px; margin-bottom: 10px;"/>
+                                <field name="cantidad" style="border: 1px solid #ccc; border-radius: 8px; padding: 5px; margin-bottom: 10px;"/>
+                                <field name="subtotal" style="border: 1px solid #ccc; border-radius: 8px; padding: 5px; margin-bottom: 10px;"/>
+                            </list>
+                        </field>
+                    </group>
+
+                    <!-- Totales -->
+                    <group class="venta-total-group" style="border: 1px solid #ddd; border-radius: 8px; padding: 15px; margin-top: 20px;">
+                        <field name="total" class="venta-total" style="border: 1px solid #ccc; border-radius: 8px; padding: 5px; margin-bottom: 10px;"/>
+                        <field name="iva" class="venta-total" string="IVA (21%)" style="border: 1px solid #ccc; border-radius: 8px; padding: 5px; margin-bottom: 10px;"/>
+                        <field name="venta_total" class="venta-total" string="Total con IVA" style="border: 1px solid #ccc; border-radius: 8px; padding: 5px; margin-bottom: 10px;"/>
                     </group>
                 </sheet>
             </form>

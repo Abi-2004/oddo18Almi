@@ -10,8 +10,7 @@
         'views/venta_views.xml',
         'views/stock_item_kanban_view.xml',
         'views/venta_kanban_view.xml',
-        'reports/venta_report_templates.xml',
-        'reports/venta_report.xml'  # Esto es crucial
+        'reports/report_venta.xml'  # Esto es crucial
     ],
 
     'installable': True,
